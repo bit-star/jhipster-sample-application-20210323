@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import './vendor';
-import { JhipsterSampleApplication20210323SharedModule } from 'app/shared/shared.module';
-import { JhipsterSampleApplication20210323CoreModule } from 'app/core/core.module';
-import { JhipsterSampleApplication20210323AppRoutingModule } from './app-routing.module';
-import { JhipsterSampleApplication20210323HomeModule } from './home/home.module';
-import { JhipsterSampleApplication20210323EntityModule } from './entities/entity.module';
+import { JhisampleSharedModule } from 'app/shared/shared.module';
+import { JhisampleCoreModule } from 'app/core/core.module';
+import { JhisampleAppRoutingModule } from './app-routing.module';
+import { JhisampleHomeModule } from './home/home.module';
+import { JhisampleEntityModule } from './entities/entity.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { MainComponent } from './layouts/main/main.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
@@ -18,14 +18,14 @@ import { ErrorComponent } from './layouts/error/error.component';
 @NgModule({
   imports: [
     BrowserModule,
-    JhipsterSampleApplication20210323SharedModule,
-    JhipsterSampleApplication20210323CoreModule,
-    JhipsterSampleApplication20210323HomeModule,
+    JhisampleSharedModule,
+    JhisampleCoreModule,
+    JhisampleHomeModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
-    JhipsterSampleApplication20210323EntityModule,
-    JhipsterSampleApplication20210323AppRoutingModule,
+    JhisampleEntityModule,
+    JhisampleAppRoutingModule,
   ],
   declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
   bootstrap: [MainComponent],
 })
-export class JhipsterSampleApplication20210323AppModule {}
+export class JhisampleAppModule {}
