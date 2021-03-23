@@ -3,6 +3,8 @@ package com.mycompany.myapp.web.rest;
 import com.mycompany.myapp.domain.Employee;
 import com.mycompany.myapp.service.EmployeeService;
 import com.mycompany.myapp.web.rest.errors.BadRequestAlertException;
+import com.mycompany.myapp.service.dto.EmployeeCriteria;
+import com.mycompany.myapp.service.EmployeeQueryService;
 
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.PaginationUtil;
@@ -39,8 +41,11 @@ public class EmployeeResource {
 
     private final EmployeeService employeeService;
 
-    public EmployeeResource(EmployeeService employeeService) {
+    private final EmployeeQueryService employeeQueryService;
+
+    public EmployeeResource(EmployeeService employeeService, EmployeeQueryService employeeQueryService) {
         this.employeeService = employeeService;
+        this.employeeQueryService = employeeQueryService;
     }
 
     /**
@@ -87,14 +92,27 @@ public class EmployeeResource {
      * {@code GET  /employees} : get all the employees.
      *
      * @param pageable the pagination information.
+     * @param criteria the criteria which the requested entities should match.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of employees in body.
      */
     @GetMapping("/employees")
-    public ResponseEntity<List<Employee>> getAllEmployees(Pageable pageable) {
-        log.debug("REST request to get a page of Employees");
-        Page<Employee> page = employeeService.findAll(pageable);
+    public ResponseEntity<List<Employee>> getAllEmployees(EmployeeCriteria criteria, Pageable pageable) {
+        log.debug("REST request to get Employees by criteria: {}", criteria);
+        Page<Employee> page = employeeQueryService.findByCriteria(criteria, pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+
+    /**
+     * {@code GET  /employees/count} : count all the employees.
+     *
+     * @param criteria the criteria which the requested entities should match.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the count in body.
+     */
+    @GetMapping("/employees/count")
+    public ResponseEntity<Long> countEmployees(EmployeeCriteria criteria) {
+        log.debug("REST request to count Employees by criteria: {}", criteria);
+        return ResponseEntity.ok().body(employeeQueryService.countByCriteria(criteria));
     }
 
     /**

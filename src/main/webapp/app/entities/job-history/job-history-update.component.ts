@@ -103,7 +103,7 @@ export class JobHistoryUpdateComponent implements OnInit {
         });
 
       this.employeeService
-        .query({ filter: 'jobhistory-is-null' })
+        .query({ 'jobHistoryId.specified': 'false' })
         .pipe(
           map((res: HttpResponse<IEmployee[]>) => {
             return res.body || [];
