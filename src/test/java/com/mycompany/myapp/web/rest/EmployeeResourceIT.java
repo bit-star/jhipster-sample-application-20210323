@@ -3,6 +3,7 @@ package com.mycompany.myapp.web.rest;
 import com.mycompany.myapp.JhisampleApp;
 import com.mycompany.myapp.domain.Employee;
 import com.mycompany.myapp.repository.EmployeeRepository;
+import com.mycompany.myapp.service.EmployeeService;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -54,6 +55,9 @@ public class EmployeeResourceIT {
 
     @Autowired
     private EmployeeRepository employeeRepository;
+
+    @Autowired
+    private EmployeeService employeeService;
 
     @Autowired
     private EntityManager em;
@@ -197,7 +201,7 @@ public class EmployeeResourceIT {
     @Transactional
     public void updateEmployee() throws Exception {
         // Initialize the database
-        employeeRepository.saveAndFlush(employee);
+        employeeService.save(employee);
 
         int databaseSizeBeforeUpdate = employeeRepository.findAll().size();
 
@@ -252,7 +256,7 @@ public class EmployeeResourceIT {
     @Transactional
     public void deleteEmployee() throws Exception {
         // Initialize the database
-        employeeRepository.saveAndFlush(employee);
+        employeeService.save(employee);
 
         int databaseSizeBeforeDelete = employeeRepository.findAll().size();
 
