@@ -1,7 +1,7 @@
 import './polyfills';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { ProdConfig } from './blocks/config/prod.config';
-import { JhipsterSampleApplication20210323AppModule } from './app.module';
+import { JhisampleAppModule } from './app.module';
 
 ProdConfig();
 
@@ -10,7 +10,7 @@ if (module['hot']) {
 }
 
 platformBrowserDynamic()
-  .bootstrapModule(JhipsterSampleApplication20210323AppModule, { preserveWhitespaces: true })
+  .bootstrapModule(JhisampleAppModule, { preserveWhitespaces: true })
   // eslint-disable-next-line no-console
   .then(() => console.log('Application started'))
   .catch(err => console.error(err));

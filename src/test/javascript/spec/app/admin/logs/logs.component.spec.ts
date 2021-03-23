@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { of } from 'rxjs';
 
-import { JhipsterSampleApplication20210323TestModule } from '../../../test.module';
+import { JhisampleTestModule } from '../../../test.module';
 import { LogsComponent } from 'app/admin/logs/logs.component';
 import { LogsService } from 'app/admin/logs/logs.service';
 import { Log } from 'app/admin/logs/log.model';
@@ -14,7 +14,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [JhipsterSampleApplication20210323TestModule],
+        imports: [JhisampleTestModule],
         declarations: [LogsComponent],
         providers: [LogsService],
       })

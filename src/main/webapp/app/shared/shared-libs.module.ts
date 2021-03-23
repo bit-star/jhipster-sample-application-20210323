@@ -19,4 +19,4 @@ import { TranslateModule } from '@ngx-translate/core';
     TranslateModule,
   ],
 })
-export class JhipsterSampleApplication20210323SharedLibsModule {}
+export class JhisampleSharedLibsModule {}

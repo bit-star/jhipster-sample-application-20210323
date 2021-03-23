@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { of } from 'rxjs';
 
-import { JhipsterSampleApplication20210323TestModule } from '../../../test.module';
+import { JhisampleTestModule } from '../../../test.module';
 import { ConfigurationComponent } from 'app/admin/configuration/configuration.component';
 import { ConfigurationService, Bean, PropertySource } from 'app/admin/configuration/configuration.service';
 
@@ -13,7 +13,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [JhipsterSampleApplication20210323TestModule],
+        imports: [JhisampleTestModule],
         declarations: [ConfigurationComponent],
         providers: [ConfigurationService],
       })

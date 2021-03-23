@@ -3,7 +3,7 @@ package com.mycompany.myapp.config.timezone;
 import static java.lang.String.format;
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.mycompany.myapp.JhipsterSampleApplication20210323App;
+import com.mycompany.myapp.JhisampleApp;
 import com.mycompany.myapp.repository.timezone.DateTimeWrapper;
 import com.mycompany.myapp.repository.timezone.DateTimeWrapperRepository;
 import java.time.*;
@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 /**
  * Integration tests for the ZoneId Hibernate configuration.
  */
-@SpringBootTest(classes = JhipsterSampleApplication20210323App.class)
+@SpringBootTest(classes = JhisampleApp.class)
 public class HibernateTimeZoneIT {
     @Autowired
     private DateTimeWrapperRepository dateTimeWrapperRepository;

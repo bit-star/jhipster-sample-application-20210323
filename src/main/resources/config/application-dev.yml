@@ -37,8 +37,8 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:file:./target/h2db/db/jhipstersampleapplication20210323;DB_CLOSE_DELAY=-1
-    username: jhipsterSampleApplication20210323
+    url: jdbc:h2:file:./target/h2db/db/jhisample;DB_CLOSE_DELAY=-1
+    username: jhisample
     password:
     hikari:
       poolName: Hikari
