@@ -101,6 +101,8 @@ relationship OneToOne {
 	JobHistory{employee} to Employee
 }
 
+
+filter Employee
 // Set pagination options
 paginate JobHistory, Employee with infinite-scroll
 paginate Job with pagination
